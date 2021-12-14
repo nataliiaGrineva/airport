@@ -1,4 +1,4 @@
-import {Routes, Route, NavLink, Navigate} from 'react-router-dom';
+import { Routes, Route, NavLink, Navigate } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import styles from './Flights.module.scss';
@@ -12,22 +12,21 @@ import Loader from './components/Loader/Loader';
 
 import { formatDate, formats } from './helpers';
 
-
 function Flights() {
   const dispatch = useDispatch();
-  const date = useSelector(state => state.date);
-  const loading = useSelector(state => state.isLoadingFlights);
+  const date = useSelector((state) => state.date);
+  const loading = useSelector((state) => state.isLoadingFlights);
 
   useEffect(() => {
     const today = new Date();
     dispatch(updateDate(formatDate(today, formats.serverDate)));
-  }, []); 
+  }, []);
 
   useEffect(() => {
     date && dispatch(loadFlights(date));
-  },[date]);
+  }, [date]);
 
-console.log('Flights RENDER');
+  console.log('Flights RENDER');
   return (
     <div className={styles.Flights}>
       <Loader loading={loading} />
@@ -37,20 +36,18 @@ console.log('Flights RENDER');
       </div>
       <div className={styles.links}>
         <NavLink
-          to='/flights/departures'
+          to="/flights/departures"
           className={({ isActive }) =>
-              isActive ? `${styles.active_link} ${styles.left_btn}` : `${styles.link} ${styles.left_btn}`
-          }
-        >
+            isActive
+              ? `${styles.active_link} ${styles.left_btn}`
+              : `${styles.link} ${styles.left_btn}`
+          }>
           DEPARTURES
         </NavLink>
 
         <NavLink
-          to='/flights/arrivals'
-          className={({ isActive }) =>
-              isActive ? styles.active_link : styles.link
-          }
-        >
+          to="/flights/arrivals"
+          className={({ isActive }) => (isActive ? styles.active_link : styles.link)}>
           ARRIVALS
         </NavLink>
       </div>
@@ -59,17 +56,10 @@ console.log('Flights RENDER');
       </div>
 
       <Routes>
-        <Route
-          path="/departures"
-          element={<Departures />}
-        />
-        <Route
-          path="/arrivals"
-          element={<Arrivals />}
-        />
+        <Route path="/departures" element={<Departures />} />
+        <Route path="/arrivals" element={<Arrivals />} />
         <Route path="*" element={<Navigate replace to="/404" />} />
       </Routes>
-
     </div>
   );
 }

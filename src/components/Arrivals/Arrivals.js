@@ -3,9 +3,7 @@ import React from 'react';
 import Table from '../Table/Table';
 
 const Arrivals = () => {
-  return (
-      <Table direction='arrival' />
-  );
+  return <Table direction="arrival" />;
 };
 
 export default Arrivals;

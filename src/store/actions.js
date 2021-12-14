@@ -14,26 +14,26 @@ export const loadingFlightsSuccess = () => ({ type: LOADING_FLIGHTS_SUCCESS });
 
 export const setArrival = (arrival) => ({
   type: SET_ARRIVAL,
-  payload: arrival,
+  payload: arrival
 });
 
 export const setDeparture = (departure) => ({
   type: SET_DEPARTURE,
-  payload: departure,
-})
+  payload: departure
+});
 export const loadingFlightsError = () => ({ type: LOADING_FLIGHTS_ERROR });
 
 export const updateDate = (date) => ({
   type: UPDATE_DATE,
-  payload: date,
+  payload: date
 });
 
 export const searchQuery = (query) => ({
   type: SEARCH_QUERY,
-  payload: query,
+  payload: query
 });
 
-export const loadFlights = (date) => async dispatch => {
+export const loadFlights = (date) => async (dispatch) => {
   dispatch(startLoadingFlights());
 
   try {

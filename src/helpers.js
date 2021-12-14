@@ -9,8 +9,8 @@ export const localTime = (timeStr) => {
 
 export const formats = {
   serverDate: 'SERVER_DATE',
-  fullMonth: 'FULL_MONTH',
-}
+  fullMonth: 'FULL_MONTH'
+};
 
 export const formatDate = (date, format) => {
   const day = date.getDate().toString().padStart(2, '0');
@@ -18,4 +18,4 @@ export const formatDate = (date, format) => {
   const year = date.getFullYear();
 
   return format === formats.serverDate ? `${day}-${month}-${year}` : `${day}/${month}`;
-}
+};

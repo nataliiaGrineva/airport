@@ -1,5 +1,5 @@
-import thunk from "redux-thunk";
-import { createStore, applyMiddleware } from "redux";
+import thunk from 'redux-thunk';
+import { createStore, applyMiddleware } from 'redux';
 
 import { START_LOADING_FLIGHTS } from './types';
 import { LOADING_FLIGHTS_SUCCESS } from './types';
@@ -15,16 +15,16 @@ const initialState = {
   arrival: [],
   departure: [],
   date: '07-12-2021',
-  query: '',
+  query: ''
 };
 
 const rootReducer = (state = initialState, action) => {
   switch (action.type) {
     case START_LOADING_FLIGHTS:
       return { ...state, isLoadingFlights: true };
-    case LOADING_FLIGHTS_SUCCESS: 
-      return {...state, isLoadingFlights: false };
-    case SET_ARRIVAL: 
+    case LOADING_FLIGHTS_SUCCESS:
+      return { ...state, isLoadingFlights: false };
+    case SET_ARRIVAL:
       return { ...state, arrival: action.payload };
     case SET_DEPARTURE:
       return { ...state, departure: action.payload };

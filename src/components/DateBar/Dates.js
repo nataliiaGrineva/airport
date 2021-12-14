@@ -7,26 +7,18 @@ import styles from './Dates.module.scss';
 import Day from './Day';
 import Calendar from './Calendar';
 
-
 const Dates = () => {
-
   const [dates, setDates] = useState([]);
 
   const dispatch = useDispatch();
-  const date = useSelector(state => state.date);
+  const date = useSelector((state) => state.date);
 
   useEffect(() => {
     const todayDate = Date.now();
     const days = [
-      {order: 'yesterday',
-      date: new Date(todayDate - 24*60*60*1000),
-      },
-      {order: 'today',
-      date: new Date(todayDate),
-      },
-      {order: 'tomorrow',
-      date: new Date(todayDate + 24*60*60*1000),
-      },
+      { order: 'yesterday', date: new Date(todayDate - 24 * 60 * 60 * 1000) },
+      { order: 'today', date: new Date(todayDate) },
+      { order: 'tomorrow', date: new Date(todayDate + 24 * 60 * 60 * 1000) }
     ];
 
     setDates(days);
@@ -46,7 +38,7 @@ const Dates = () => {
         <Calendar date={date} selectDate={handleChangeDate} />
       </div>
       <div className={styles.dates_container}>
-        {dates.map(item => (
+        {dates.map((item) => (
           <Day
             date={item.date}
             order={item.order}
@@ -57,8 +49,7 @@ const Dates = () => {
         ))}
       </div>
     </div>
-
-  )
-}
+  );
+};
 
 export default Dates;

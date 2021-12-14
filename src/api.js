@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from 'axios';
 
 // 'https://api.iev.aero/api/flights/07-12-2021'
 
@@ -9,12 +9,11 @@ export const getFlights = async (date) => {
     const allFlights = await axios.get(`${FLIGHTS_URL}${date}`);
     const arrival = allFlights.data.body.arrival;
     const departure = allFlights.data.body.departure;
-    return {arrival, departure};
-
+    return { arrival, departure };
   } catch (error) {
     console.warn(error);
   }
-}
+};
 
 export const statusFlight = (status) => {
   switch (status) {
