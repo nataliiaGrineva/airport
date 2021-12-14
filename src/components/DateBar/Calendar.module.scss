@@ -1,0 +1,27 @@
+.calendar_wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-left: 12px;
+}
+
+.calendar_btn {
+  width: 35px;
+  height: 35px;
+  background-image: url('../../images/calender.png');
+  background-position: center center;
+  background-size: 90%;
+  background-repeat: no-repeat;
+  border: none;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.date_str {
+  color: #1eb7ee;
+  font-size: 12px;
+  font-weight: bold;
+  // margin-bottom: 5px;
+}
+

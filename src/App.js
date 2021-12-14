@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import {Routes, Route, Navigate} from 'react-router-dom';
+import styles from './App.module.scss';
+import Flights from './Flights';
+import NotFoundPage from './components/NotFoundPage/NotFoundPage';
+import "react-datepicker/dist/react-datepicker.css";
 
-function App() {
+function App () {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={styles.app}>
+      <Routes>
+      <Route path="/" element={<Navigate replace to="/flights/departures" />} />
+        <Route
+          path='/flights/*'
+          element={<Flights />}
+        />
+        <Route
+          path="/404"
+          element={<NotFoundPage />}
+        />
+        <Route path="*" element={<Navigate replace to="/404" />} />
+      </Routes>
     </div>
   );
 }

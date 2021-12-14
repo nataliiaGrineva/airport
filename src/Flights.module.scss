@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
+
+html, body, button, input {
+  font-family: 'Open Sans', sans-serif;
+}
+
+body {
+min-height: 100vh;
+background-color: #e7efec;
+}
+
+.Flights {
+  text-align: center;
+  font-weight: 300;
+}
+
+.search_container {
+  display: flex;
+  width: 60%;
+  margin: 24px auto 40px auto;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.heading {
+  font-size: 60px;
+}
+
+.links {
+  display: flex;
+  height: 60px;
+  margin: 0 auto;
+  width: 80%;
+  border-radius: 60px 60px 0 0;
+  border: none;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.link {
+  position: relative;
+  color: #fff;
+  display: block;
+  background-color: #1eb7ee;
+  text-decoration: none;
+  font-size: 24px;
+  border-radius: 60px 60px 0 0;
+  flex: 1;
+  line-height: 50px;
+  border: none;
+  transition: all 0.1s ease;
+}
+
+.active_link {
+  position: relative;
+  z-index: 1;
+  display: block;
+  text-decoration: none;
+  font-size: 24px;
+  flex: 1;
+  background: #fff;
+  color: #1eb7ee;
+  border-radius: 60px 60px 0 0;
+  line-height: 50px;
+  transition: all 0.1s ease;
+}
+
+.link:hover {
+  background-color: #007bff;
+}
+
+.left_btn {
+  margin-right: -100px;
+}

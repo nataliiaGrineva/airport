@@ -1,0 +1,30 @@
+.day_container {
+  cursor: pointer;
+  text-align: center;
+  padding-bottom: 5px;
+  -webkit-transition: .3s ease-out;
+  transition: .3s ease-out;
+  position: relative;
+  flex-basis: 33.33333%;
+  max-width: 33.33333%;
+}
+
+.active_day {
+  color: #1eb7ee;
+  border-bottom: 3px solid #1eb7ee;
+}
+
+.not_active_day {
+  color: #b8b9b9;
+  border-bottom: 3px solid #b8b9b9;
+}
+
+.day_number {
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+
+.day_title {
+  font-weight: 700;
+  text-transform: uppercase;
+}
